@@ -1,6 +1,29 @@
 @import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@font-face {
+    font-family:        'bebas_neuethin';
+    src:                url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_thin-webfont.woff2') format('woff2'),
+                        url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_thin-webfont.woff') format('woff');
+    font-weight:        normal;
+    font-style:         normal;
+}
+
+@font-face {
+    font-family:        'bebas_neueregular';
+    src:                url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_regular-webfont.woff2') format('woff2'),
+                        url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_regular-webfont.woff') format('woff');
+    font-weight:        normal;
+    font-style:         normal;
+}
+
+@font-face {
+    font-family:        'bebas_neuebold';
+    src:                url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_bold-webfont.woff2') format('woff2'),
+                        url('../fonts/bebas_neue/webfontkit-20210311-044614/bebasneue_bold-webfont.woff') format('woff');
+    font-weight:        normal;
+    font-style:         normal;
+}
 
 body {
     box-sizing:             border-box;
@@ -24,11 +47,10 @@ main {
     justify-content:        center;
     background-color:       rgb(245,244,249);
     width:                  334px;
-    height:                 611px;
+    height:                 640px;
     border-radius:          4px;
     margin:                 15px;
-    box-shadow:             0 2px 3px rgb(211, 185, 105);
-    font-family:            'Miso', 'Lucida Console';
+    padding:                16px 0;
 
     &_gold {
         width:                      370px;
@@ -43,11 +65,134 @@ main {
         
     }
 
+    &__rate {
+        font-family:                'bebas_neuethin', 'Arial', 'sans-serif';
+        font-size:                  55px;
+        color:                      rgb(106, 106, 108);
+        margin:                     25px 0;
+
+        &::before {
+            content:                "$ ";
+            font-size:              23px;
+            //this stuff makes text in upper index
+            height:                 0;
+            line-height:            1;
+            vertical-align:         baseline;
+            _vertical-align:        bottom;
+            position:               relative;
+            bottom:                 2.5ex;
+        }
+
+        &::after {
+            content:                " /hr";
+            text-transform:         uppercase;
+            font-size:              15px;
+        }
+
+        &_gold {
+            position:relative;
+            top: -35px;
+        }
+    }
+
+    &__position {
+        font-family:                'bebas_neueregular', 'Arial', 'sans-serif';
+        text-transform:             uppercase;
+        font-size:                  20px;
+        letter-spacing:             3px;
+        margin:                     32px 0;
+
+        &_gold {
+            position:relative;
+            top: -35px;
+        }
+    }
+
     &__content {
         background-image:           url("../img/Curv-shape.png");
         width:                      100%;
         height:                     400px;
         background-size:            cover;
         background-repeat:          no-repeat;
+        display:                    flex;
+        flex-direction:             column;
+        justify-content:            center;
+        align-items:                center;
+        font-family:                'Roboto', sans-serif;
+        padding-top:                37px;
+
+        & li {
+            list-style:             none;
+            line-height:            55px;
+            color:                  rgb(86, 86, 86);
+            font-size:              17px;
+        }
+
+        &_gold {
+            position: relative;
+            top: -30px;
+        }
+    }
+
+    &__icon {
+        font-size:                  37px;
+    }
+
+    &__button, &__button_gold {
+        display:                    flex;
+        text-decoration:            none;
+        width:                      200px;
+        height:                     55px;
+        background-color:           rgb(111, 207, 251);
+        border-radius:              25px;
+        position:                   relative;
+        top:                        6%;
+        color:                      #fff;
+        justify-content:            center;
+        align-items:                center;
+        text-transform:             uppercase;
+        font-family:                'bebas_neuebold', 'Arial', 'sans-serif';
+        font-size:                  17px;
+        letter-spacing:             1px;
+    }
+
+    &__button_gold {
+        background-color:           rgb(253, 141, 123);
+        top:                        -7%;
+    }
+
+    &__popular-mark {
+        background-image: url("../img/Popular.png");
+        width: 150px;
+        height: 65px;
+        position:relative;
+        left: 195px;
+        top: -5px;
+        background-repeat: no-repeat;
+    }
+}
+
+@media(max-width: 1127px) {
+    .sticker_gold {
+        order: -1;
+    }
+    main {
+        padding: 20px 0;
+    }
+}
+
+@media(max-width: 570px) {
+    .sticker__popular-mark {
+        left: 30vw;
+    }
+}
+
+@media(max-width: 360px) {
+    .sticker {
+        width: 100%;
+        margin: 15px 0;
+    }
+    .sticker__popular-mark {
+        left: -24vw;
     }
 }
