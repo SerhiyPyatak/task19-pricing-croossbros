@@ -1,6 +1,53 @@
 @import "../node_modules/normalize-scss/sass/normalize/import-now";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing:             border-box;
+    margin:                 0;
+    padding:                0;
+    background-color:       rgb(151, 137, 249);
+}
+
+main {
+    display:                flex;
+    justify-content:        center;
+    align-items:            center;
+    height:                 100vh;
+    flex-wrap:              wrap;
+}
+
+.sticker {
+    display:                flex;
+    flex-direction:         column;
+    align-items:            center;
+    justify-content:        center;
+    background-color:       rgb(245,244,249);
+    width:                  334px;
+    height:                 611px;
+    border-radius:          4px;
+    margin:                 15px;
+    box-shadow:             0 2px 3px rgb(211, 185, 105);
+    font-family:            'Miso', 'Lucida Console';
+
+    &_gold {
+        width:                      370px;
+        height:                     693px;
+        &__content {
+            background-image:       url("../img/Curv-shape-popular.png");
+            background-size:        cover;
+            background-repeat:      no-repeat;
+            width:                  100%;
+            height:                 426px;
+        }
+        
+    }
+
+    &__content {
+        background-image:           url("../img/Curv-shape.png");
+        width:                      100%;
+        height:                     400px;
+        background-size:            cover;
+        background-repeat:          no-repeat;
+    }
 }
