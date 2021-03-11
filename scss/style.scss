@@ -175,9 +175,17 @@ main {
 @media(max-width: 1127px) {
     .sticker_gold {
         order: -1;
+        margin:         15px 190px;
+
     }
     main {
         padding: 20px 0;
+    }
+}
+
+@media(max-width: 775px) {
+    .sticker_gold {
+        margin:         15px;
     }
 }
 
@@ -187,7 +195,7 @@ main {
     }
 }
 
-@media(max-width: 360px) {
+@media(max-width: 420px) {
     .sticker {
         width: 100%;
         margin: 15px 0;
